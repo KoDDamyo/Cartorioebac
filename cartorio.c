@@ -117,76 +117,96 @@ int main(){
 	
 	int opcao=0; //definindo as variaveis	
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;){ //definindo laço de repetição
+	
+	//sistema de senha
+	printf("### Cartório Municipal ### \n\n");
+	printf("Acesso administrativo \n\nDigite a sua senha: "); //requisição da senha
+	scanf("%s", senhadigitada);
+	
+	comparacao= strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0){
 		
-		system("cls"); //responsavel por limpar a tela
-		
-		setlocale(LC_ALL, "Portuguese"); //definindo a lingua
-		
-		printf("### Cartório Municipal ### \n\n"); //inicio do menu
-		printf("Escolha uma opção no menu: \n\n");
-		printf("\t1 - Registrar nome \n");
-		printf("\t2 - Consultar nome \n");
-		printf("\t3 - Deletar nome \n\n");
-		printf("\t4 - Sair do sistema \n\n");
-		printf("Opção: "); //final do menu
-		
-		scanf("%d", &opcao); //armazenando as informações/escolha do usuario
-		
-		system("cls"); //deletando todas as mensagens após a escolha da opção
-		
-		//inicio da seção porém usando switch case que é uma forma melhor de reduzir a complexidade de vários if
-		switch(opcao){
-			case 1:
-				registro(); //chamada de funções
-			break;
+		system("cls");
+		for(laco=1;laco=1;){ //definindo laço de repetição
 			
-			case 2:
-				consulta();
-			break;
+			system("cls"); //responsavel por limpar a tela
 			
-			case 3:
-				deletar();
-			break;
+			setlocale(LC_ALL, "Portuguese"); //definindo a lingua
 			
-			case 4:
-				printf("Obrigado por utilizar o sistema!\n");
-				return 0;
-			break;	
+			printf("### Cartório Municipal ### \n\n"); //inicio do menu
+			printf("Escolha uma opção no menu: \n\n");
+			printf("\t1 - Registrar nome \n");
+			printf("\t2 - Consultar nome \n");
+			printf("\t3 - Deletar nome \n\n");
+			printf("\t4 - Sair do sistema \n\n");
+			printf("Opção: "); //final do menu
 			
-			default:
-				printf("Opção inválida\n");
-				system("pause");
-			break;
+			scanf("%d", &opcao); //armazenando as informações/escolha do usuario
+			
+			system("cls"); //deletando todas as mensagens após a escolha da opção
+			
+			//inicio da seção porém usando switch case que é uma forma melhor de reduzir a complexidade de vários if
+			switch(opcao){
+				case 1:
+					registro(); //chamada de funções
+				break;
+				
+				case 2:
+					consulta();
+				break;
+				
+				case 3:
+					deletar();
+				break;
+				
+				case 4:
+					printf("Obrigado por utilizar o sistema!\n");
+					return 0;
+				break;	
+				
+				default:
+					printf("Opção inválida\n");
+					system("pause");
+				break;
+			}
+			//fim da seção switch case
+			
+			//inicio da seleção
+			//if(opcao==1){
+			//	printf("Registro de nome escolhido\n");
+			//	system("pause");
+			//}
+			
+			//if(opcao==2){
+			//	printf("Consulta de nome escolhido\n");
+			//	system("pause");
+			//}
+			
+			//if(opcao==3){
+			//	printf("Deletar nome escolhido\n");
+			//	system("pause");
+			//}
+			
+			//if(opcao>=4 || opcao<=0){
+			//	printf("Opção inválida\n");
+			//	system("pause");
+			//}
+			//fim da seleção
+			
+			
+			//printf("Software criado por Gabriel Borges, uso livre para qualquer pessoa.");
+		
 		}
-		//fim da seção switch case
-		
-		//inicio da seleção
-		//if(opcao==1){
-		//	printf("Registro de nome escolhido\n");
-		//	system("pause");
-		//}
-		
-		//if(opcao==2){
-		//	printf("Consulta de nome escolhido\n");
-		//	system("pause");
-		//}
-		
-		//if(opcao==3){
-		//	printf("Deletar nome escolhido\n");
-		//	system("pause");
-		//}
-		
-		//if(opcao>=4 || opcao<=0){
-		//	printf("Opção inválida\n");
-		//	system("pause");
-		//}
-		//fim da seleção
-		
-		
-		//printf("Software criado por Gabriel Borges, uso livre para qualquer pessoa.");
-		
-	}	
+	
+	}
+	
+	else{
+		printf("Senha incorreta, tente novamente!"); //caso erre a senha
+	 }		
 	
 }
+
